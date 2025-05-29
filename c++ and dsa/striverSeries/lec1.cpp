@@ -9,7 +9,8 @@ int main(){
     cin >> age;
     if (age >= 18) {
         cout << "You are an adult." << endl;
-    } else {
+    } 
+    else {
         cout << "You are not an adult." << endl;
     }
 

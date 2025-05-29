@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Bank Statement Generator</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .statement-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .bank-header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .bank-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+        .statement-title {
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .account-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+        .transactions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 12px;
+        }
+        .transactions-table th {
+            background: #2c5aa0;
+            color: white;
+            padding: 12px 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        .transactions-table td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        .transactions-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .debit {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+        .credit {
+            color: #388e3c;
+            font-weight: bold;
+        }
+        .balance-row {
+            background: #e3f2fd !important;
+            font-weight: bold;
+        }
+        .amount {
+            text-align: right;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 10px;
+            color: #666;
+        }
+        .download-btn {
+            background: #2c5aa0;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .download-btn:hover {
+            background: #1e3a8a;
+        }
+    </style>
+</head>
+<body>
+    <div class="statement-container">
+        <div class="bank-header">
+            <div class="bank-name">STATE BANK OF INDIA</div>
+            <div class="statement-title">ACCOUNT STATEMENT</div>
+            <div>Statement Period: 01/01/2024 to 31/01/2024</div>
+        </div>
+
+        <div class="account-info">
+            <div>
+                <div class="info-row">
+                    <span><strong>Account Holder:</strong></span>
+                    <span>RAHUL SHARMA</span>
+                </div>
+                <div class="info-row">
+                    <span><strong>Account Number:</strong></span>
+                    <span>12345678901</span>
+                </div>
+                <div class="info-row">
+                    <span><strong>Account Type:</strong></span>
+                    <span>SAVINGS ACCOUNT</span>
+                </div>
+            </div>
+            <div>
+                <div class="info-row">
+                    <span><strong>Branch:</strong></span>
+                    <span>DELHI MAIN BRANCH</span>
+                </div>
+                <div class="info-row">
+                    <span><strong>IFSC Code:</strong></span>
+                    <span>SBIN0000123</span>
+                </div>
+                <div class="info-row">
+                    <span><strong>CIF Number:</strong></span>
+                    <span>987654321</span>
+                </div>
+            </div>
+        </div>
+
+        <table class="transactions-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Value Date</th>
+                    <th>Description</th>
+                    <th>Ref No./Cheque No.</th>
+                    <th>Debit</th>
+                    <th>Credit</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="balance-row">
+                    <td>01/01/2024</td>
+                    <td>01/01/2024</td>
+                    <td>Opening Balance</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td class="amount">₹ 50,000.00</td>
+                </tr>
+                <tr>
+                    <td>02/01/2024</td>
+                    <td>02/01/2024</td>
+                    <td>UPI/SWIGGY DELHI/payment to merchant</td>
+                    <td>UPI123456789</td>
+                    <td class="debit amount">₹ 450.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 49,550.00</td>
+                </tr>
+                <tr>
+                    <td>03/01/2024</td>
+                    <td>03/01/2024</td>
+                    <td>IMPS/UBER INDIA/ride payment debited</td>
+                    <td>IMPS987654321</td>
+                    <td class="debit amount">₹ 280.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 49,270.00</td>
+                </tr>
+                <tr>
+                    <td>04/01/2024</td>
+                    <td>04/01/2024</td>
+                    <td>SALARY CREDIT FROM XYZ COMPANY</td>
+                    <td>NEFT456789123</td>
+                    <td>-</td>
+                    <td class="credit amount">₹ 75,000.00</td>
+                    <td class="amount">₹ 1,24,270.00</td>
+                </tr>
+                <tr>
+                    <td>05/01/2024</td>
+                    <td>05/01/2024</td>
+                    <td>UPI/ZOMATO PAYMENT/food delivery</td>
+                    <td>UPI246810121</td>
+                    <td class="debit amount">₹ 650.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 1,23,620.00</td>
+                </tr>
+                <tr>
+                    <td>06/01/2024</td>
+                    <td>06/01/2024</td>
+                    <td>DEBIT CARD PURCHASE AMAZON INDIA</td>
+                    <td>DC789123456</td>
+                    <td class="debit amount">₹ 2,499.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 1,21,121.00</td>
+                </tr>
+                <tr>
+                    <td>07/01/2024</td>
+                    <td>07/01/2024</td>
+                    <td>UPI/PETROL PUMP DELHI/fuel payment</td>
+                    <td>UPI135792468</td>
+                    <td class="debit amount">₹ 3,200.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 1,17,921.00</td>
+                </tr>
+                <tr>
+                    <td>08/01/2024</td>
+                    <td>08/01/2024</td>
+                    <td>NETFLIX SUBSCRIPTION PAYMENT</td>
+                    <td>DC963852741</td>
+                    <td class="debit amount">₹ 649.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 1,17,272.00</td>
+                </tr>
+                <tr>
+                    <td>09/01/2024</td>
+                    <td>09/01/2024</td>
+                    <td>ELECTRICITY BILL PAYMENT DELHI</td>
+                    <td>BBPS741852963</td>
+                    <td class="debit amount">₹ 1,850.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 1,15,422.00</td>
+                </tr>
+                <tr>
+                    <td>10/01/2024</td>
+                    <td>10/01/2024</td>
+                    <td>UPI/OLA CABS/taxi ride payment</td>
+                    <td>UPI852741963</td>
+                    <td class="debit amount">₹ 320.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 1,15,102.00</td>
+                </tr>
+                <tr>
+                    <td>11/01/2024</td>
+                    <td>11/01/2024</td>
+                    <td>RESTAURANT BILL PAYMENT DELHI</td>
+                    <td>DC147258369</td>
+                    <td class="debit amount">₹ 1,200.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 1,13,902.00</td>
+                </tr>
+                <tr>
+                    <td>12/01/2024</td>
+                    <td>12/01/2024</td>
+                    <td>FLIPKART SHOPPING PAYMENT</td>
+                    <td>UPI369258147</td>
+                    <td class="debit amount">₹ 1,899.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 1,12,003.00</td>
+                </tr>
+                <tr>
+                    <td>13/01/2024</td>
+                    <td>13/01/2024</td>
+                    <td>MOBILE RECHARGE PAYMENT</td>
+                    <td>BBPS258147369</td>
+                    <td class="debit amount">₹ 499.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 1,11,504.00</td>
+                </tr>
+                <tr>
+                    <td>14/01/2024</td>
+                    <td>14/01/2024</td>
+                    <td>HOSPITAL BILL PAYMENT MEDICAL</td>
+                    <td>NEFT753951486</td>
+                    <td class="debit amount">₹ 2,500.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 1,09,004.00</td>
+                </tr>
+                <tr>
+                    <td>15/01/2024</td>
+                    <td>15/01/2024</td>
+                    <td>MOVIE THEATER BOOKING PAYMENT</td>
+                    <td>DC486159753</td>
+                    <td class="debit amount">₹ 800.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 1,08,204.00</td>
+                </tr>
+                <tr>
+                    <td>16/01/2024</td>
+                    <td>16/01/2024</td>
+                    <td>MYNTRA SHOPPING CLOTHING</td>
+                    <td>UPI159753486</td>
+                    <td class="debit amount">₹ 3,499.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 1,04,705.00</td>
+                </tr>
+                <tr>
+                    <td>17/01/2024</td>
+                    <td>17/01/2024</td>
+                    <td>METRO CARD RECHARGE DELHI</td>
+                    <td>BBPS987321654</td>
+                    <td class="debit amount">₹ 500.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 1,04,205.00</td>
+                </tr>
+                <tr>
+                    <td>18/01/2024</td>
+                    <td>18/01/2024</td>
+                    <td>INSURANCE PREMIUM PAYMENT</td>
+                    <td>NEFT654321987</td>
+                    <td class="debit amount">₹ 5,000.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 99,205.00</td>
+                </tr>
+                <tr>
+                    <td>19/01/2024</td>
+                    <td>19/01/2024</td>
+                    <td>CAFE COFFEE DAY PAYMENT</td>
+                    <td>DC321987654</td>
+                    <td class="debit amount">₹ 350.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 98,855.00</td>
+                </tr>
+                <tr>
+                    <td>20/01/2024</td>
+                    <td>20/01/2024</td>
+                    <td>MUTUAL FUND SIP INVESTMENT</td>
+                    <td>NACH789456123</td>
+                    <td class="debit amount">₹ 10,000.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 88,855.00</td>
+                </tr>
+                <tr>
+                    <td>21/01/2024</td>
+                    <td>21/01/2024</td>
+                    <td>BROADBAND INTERNET BILL</td>
+                    <td>BBPS123789456</td>
+                    <td class="debit amount">₹ 1,299.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 87,556.00</td>
+                </tr>
+                <tr>
+                    <td>22/01/2024</td>
+                    <td>22/01/2024</td>
+                    <td>PHARMACY MEDICINE PURCHASE</td>
+                    <td>DC456123789</td>
+                    <td class="debit amount">₹ 750.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 86,806.00</td>
+                </tr>
+                <tr>
+                    <td>23/01/2024</td>
+                    <td>23/01/2024</td>
+                    <td>COURSE FEE PAYMENT ONLINE</td>
+                    <td>NEFT159357486</td>
+                    <td class="debit amount">₹ 8,500.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 78,306.00</td>
+                </tr>
+                <tr>
+                    <td>24/01/2024</td>
+                    <td>24/01/2024</td>
+                    <td>GAS CYLINDER BOOKING PAYMENT</td>
+                    <td>UPI753159486</td>
+                    <td class="debit amount">₹ 950.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 77,356.00</td>
+                </tr>
+                <tr>
+                    <td>25/01/2024</td>
+                    <td>25/01/2024</td>
+                    <td>HOTSTAR SUBSCRIPTION PAYMENT</td>
+                    <td>DC357486159</td>
+                    <td class="debit amount">₹ 1,499.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 75,857.00</td>
+                </tr>
+                <tr>
+                    <td>26/01/2024</td>
+                    <td>26/01/2024</td>
+                    <td>BOOK STORE PURCHASE EDUCATION</td>
+                    <td>UPI486159357</td>
+                    <td class="debit amount">₹ 1,250.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 74,607.00</td>
+                </tr>
+                <tr>
+                    <td>27/01/2024</td>
+                    <td>27/01/2024</td>
+                    <td>AUTO RICKSHAW PAYMENT</td>
+                    <td>UPI159486357</td>
+                    <td class="debit amount">₹ 120.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 74,487.00</td>
+                </tr>
+                <tr>
+                    <td>28/01/2024</td>
+                    <td>28/01/2024</td>
+                    <td>DINING RESTAURANT PAYMENT</td>
+                    <td>DC486357159</td>
+                    <td class="debit amount">₹ 2,200.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 72,287.00</td>
+                </tr>
+                <tr>
+                    <td>29/01/2024</td>
+                    <td>29/01/2024</td>
+                    <td>WATER BILL PAYMENT DELHI</td>
+                    <td>BBPS357159486</td>
+                    <td class="debit amount">₹ 680.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 71,607.00</td>
+                </tr>
+                <tr>
+                    <td>30/01/2024</td>
+                    <td>30/01/2024</td>
+                    <td>GROCERY STORE PURCHASE</td>
+                    <td>DC159486357</td>
+                    <td class="debit amount">₹ 3,500.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 68,107.00</td>
+                </tr>
+                <tr>
+                    <td>31/01/2024</td>
+                    <td>31/01/2024</td>
+                    <td>SPORTS CLUB MEMBERSHIP</td>
+                    <td>NACH486357159</td>
+                    <td class="debit amount">₹ 2,000.00</td>
+                    <td>-</td>
+                    <td class="amount">₹ 66,107.00</td>
+                </tr>
+                <tr class="balance-row">
+                    <td>31/01/2024</td>
+                    <td>31/01/2024</td>
+                    <td>Closing Balance</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td class="amount">₹ 66,107.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="footer">
+            <p><strong>Important Note:</strong> This is a computer-generated statement and does not require signature.</p>
+            <p>For any queries, please contact customer service at 1800-11-2211 or visit www.sbi.co.in</p>
+            <p>Generated on: 01/02/2024 10:30:45 AM</p>
+        </div>
+    </div>
+
+    <button class="download-btn" onclick="downloadPDF()">Download as PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <script>
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const element = document.querySelector('.statement-container');
+            
+            // Hide the download button temporarily
+            const downloadBtn = document.querySelector('.download-btn');
+            downloadBtn.style.display = 'none';
+            
+            html2canvas(element, {
+                scale: 2,
+                useCORS: true,
+                allowTaint: true,
+                height: element.scrollHeight,
+                width: element.scrollWidth
+            }).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                
+                const imgWidth = 210;
+                const pageHeight = 295;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 0;
+                
+                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+                
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+                
+                pdf.save('Sample_Bank_Statement_Jan_2024.pdf');
+                
+                // Show the download button again
+                downloadBtn.style.display = 'block';
+            }).catch(error => {
+                console.error('Error generating PDF:', error);
+                alert('Error generating PDF. Please try again.');
+                downloadBtn.style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>
