@@ -1,0 +1,13 @@
+JDK: Java Development Tool Kit
+    contains JRE which contains JVM
+    contains development tools
+JRE: Java Runtime Environment
+    contains JVM, thus JRE is said to be responsible for running java programs
+JVM: Java Virtual Machine 
+    are responsible for executing java programs
+
+first.java(a java file) ---> javac(java compiler, present in JDK) ---> java.class
+
+javac: compiler, a development tool
+
+install jdk and set it to path

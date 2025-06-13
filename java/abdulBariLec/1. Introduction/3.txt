@@ -1,0 +1,72 @@
+Skeleton of the java program
+
+import java.lang.*;
+
+class MyFirst{
+    public static void main(String args[]){
+        System.out.println("Hello World");
+    }
+}
+
+save the upper code in a file with the same file name as you named the class "MyFirst"
+if class is not public than file name and class name can be different but if the class is public then is is compoulsory to give both the file and the class the same name
+the .class will created based on the name we give to the class irrespective of the filename
+
+javac MyFirst.java
+    this statements compiles the file and creates a new file named as MyFile.class, if the original file is error free, a new file witht he same name but different extension
+java MyFirst
+    this statement runs the class file, that contains byte code
+    this triggers the JVM and since JVM is an interpreter it converts the byte code into machine code and then executes the program
+    if file name and class name is different than after java, write the classname where the main function is created
+
+        1. javac MyFirst.java
+        (creates a new file named as MyFirst.class if original file has no error)
+        2. java MyFirst
+        (it calls MyFirst.main, the main method of the program without creating an object, thus "static" is used)
+
+type MyFirst.java  
+    this command will show you the code of the file
+
+type MyFirst.class
+    this command will show you bytecode
+
+java.lang.*
+    lang is a package, similar to libraries in c, c++ and python
+    this is a mandatory package, if you don't import it, it will automatically get imported
+
+every java program is in the form of a class, main function should also be inside a class
+    class classname {
+        ---
+    }
+
+    classname should be similar to that of the file name
+
+starting point of the program is "main method", method here is similar to that of functions in c, c++ and python
+    class classname{
+        public static void main(String args[]){
+            ---
+        }
+    }
+
+    void main
+        in java main method never returns anything, thus void
+    
+    public
+        if we want anything in a class to be visible outside the class it must be public so that it can be visible outside the class
+        if it won't be public then JVM won't be able to see the main method that is defined here and thus program won't run
+
+    static
+        we can not use a class unless we have created an object
+        if we want to use anything from the class without creating an object then that should be declared as "static"
+
+    String args[]
+        command line arguments
+
+System.out.println("----")
+    this command prints anything written inside double quotes as it is
+    this is the printing method
+    "println" is a method for printing anything on the screen
+        is contains () at the end
+    "out" is an object which contains "println" method
+    "System" is a class that contains "out" which contains "println" method
+        starts with "S" and not "s" thus a classname
