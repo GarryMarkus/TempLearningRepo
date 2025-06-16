@@ -1,0 +1,17 @@
+reading from keyboard
+class Scanner, this class is provided from version 5 onwards
+package util
+
+methods available:
+nextInt()
+nextFloat()
+nextDouble()
+next()
+nextLine()
+nextByte()
+nextShort()
+nextLong()
+nextBoolean()
+
+hasNextInt()
+hasNextFloat()

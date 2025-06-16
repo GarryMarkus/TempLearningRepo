@@ -15,3 +15,4 @@ class MyFirst{
 //not run using command line
 //javac MyFirst.java
 //java MyFirst hello
+//this is called as command line argument
