@@ -8,8 +8,8 @@ methods available:
 nextInt(): method to read an interger form the keyboard
 nextFloat()
 nextDouble()
-next()
-nextLine()
+next(): read only the next Word
+nextLine(): read the whole next line
 nextByte()
 nextShort()
 nextLong()
