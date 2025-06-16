@@ -2,8 +2,10 @@ reading from keyboard
 class Scanner, this class is provided from version 5 onwards
 package util
 
+System.in is an object attached to keyboard
+
 methods available:
-nextInt()
+nextInt(): method to read an interger form the keyboard
 nextFloat()
 nextDouble()
 next()
@@ -13,5 +15,5 @@ nextShort()
 nextLong()
 nextBoolean()
 
-hasNextInt()
+hasNextInt(): method to confirm if the next value that is coming in is an integer or not, returns boolean value
 hasNextFloat()

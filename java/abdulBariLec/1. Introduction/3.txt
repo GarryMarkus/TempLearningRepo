@@ -63,6 +63,8 @@ starting point of the program is "main method", method here is similar to that o
         command line arguments
 
 System.out.println("----")
+    System.out is an object attached to the display device
+    the "ln" in "println" means new line
     this command prints anything written inside double quotes as it is
     this is the printing method
     "println" is a method for printing anything on the screen
