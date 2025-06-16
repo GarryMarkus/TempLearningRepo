@@ -1,0 +1,16 @@
+variables are meant to store data
+they have a data type
+data type defines what type of data a variable can store, i.e. integer, float, boolean, character
+Primitive Data Types:
+    1. Integral
+        a. byte(1)
+        b. short(2)
+        c. int(4)
+        d. long(8)
+    2. Floating Point
+        a. float(4)
+        b. double(8)
+    3. Char(2)
+    4. Boolean(size depends upon the JVM used, here in java, true != 1 and false != 0, default value is false)
+
+default value for all the other data types is 0, zero

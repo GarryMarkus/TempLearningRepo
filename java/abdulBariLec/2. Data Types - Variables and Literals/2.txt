@@ -1,0 +1,7 @@
+int is a primitive data type
+Integer is a class for the data type int
+    it is a wrapper around this class
+
+javap java.lang.Integer
+
+similary other classes are Byte, Short, Long, Flat, Double, Character 

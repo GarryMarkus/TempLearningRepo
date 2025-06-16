@@ -1,0 +1,6 @@
+byte b; //declaration
+b=5; //assigning value to the variable
+
+declaration + assigningValue = initialization of a variable
+
+memory occupied by a variable depends upon the data type
