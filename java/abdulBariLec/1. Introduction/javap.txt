@@ -1,0 +1,3 @@
+javap java.util.Scanner
+
+this command will list down all the available methods in the Scanner class
