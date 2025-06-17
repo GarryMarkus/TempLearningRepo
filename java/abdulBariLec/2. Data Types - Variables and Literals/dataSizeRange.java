@@ -1,6 +1,6 @@
 import java.lang.*;
 
-class dataSizeRange {
+class DataSizeRange {
     public static void main(String args[]){
         System.out.println("Integer min value: " + Integer.MIN_VALUE);
         System.out.println("Integer max value: " + Integer.MAX_VALUE);
