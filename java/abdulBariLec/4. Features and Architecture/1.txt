@@ -1,0 +1,10 @@
+interpreters and compilers
+convert high level code to maching language code
+
+interpreter: convert line by line and everytime before execution an interpreter is required to convert the code again and again irrespective of the changes
+as soon as the error occured, the interpreter won't move forward and show error
+
+compiler: convert all together and if the code is not edited that there is no need of compiler again to convert the code, once covnerted a compiled file gets created that contain the machine code
+if the file contains any error at any where in the code than the compiled won't be created at all, first the error needs to be resolved for the compiled file to be created
+
+java is a hybrid language

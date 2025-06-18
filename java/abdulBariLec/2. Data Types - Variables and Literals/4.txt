@@ -1,0 +1,8 @@
+variable names rules and conventions
+
+- Use **camelCase** (e.g., `myVariableName`).
+- Start with a **letter**, `_`, or `$` (e.g., `_count`, `$price`).
+- Avoid **reserved keywords** (e.g., `class`, `int`).
+- Use **meaningful names** (e.g., `userAge` instead of `x`).
+- No **spaces** or **special characters** except `_` and `$`.
+- Case-sensitive (e.g., `count` ≠ `Count`). 

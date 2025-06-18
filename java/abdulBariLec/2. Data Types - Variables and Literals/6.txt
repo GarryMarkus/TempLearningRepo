@@ -1,0 +1,8 @@
+literals are constant values that are used in a program
+literals also have a data type similar to that of the variales
+any value with a decimal point is a DOUBLE literal by default
+
+values of byte, short and int datatypes are all considered as INTEGER literal
+values of long dataypes ends with 'l' or 'L'
+values of float dataypes ends with 'f' or 'F' else it will considered as a DOUBLE literal, DOUBLE literal can also end with 'd' or 'D'
+

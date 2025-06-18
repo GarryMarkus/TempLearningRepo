@@ -2,7 +2,7 @@ variables are meant to store data
 they have a data type
 data type defines what type of data a variable can store, i.e. integer, float, boolean, character
 Primitive Data Types:
-    1. Integral
+    1. Integral/Integer
         a. byte(1)
         b. short(2)
         c. int(4)

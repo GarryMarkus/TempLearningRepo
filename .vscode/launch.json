@@ -1,6 +1,13 @@
 {
     "configurations": [
         {
+            "type": "java",
+            "name": "UseRadix",
+            "request": "launch",
+            "mainClass": "UseRadix",
+            "projectName": ""
+        },
+        {
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
