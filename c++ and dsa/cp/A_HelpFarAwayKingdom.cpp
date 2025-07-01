@@ -11,11 +11,13 @@ int main(){
             cout << "GOTO Vasilisa.";
         }
         else{
-            if(x[dot+1]<5){
+            if(x[dot+1]<'5'){
                 cout << x.substr(0, dot);
             }
             else{
-                x[dot-1]=string(int(x[dot-1])+1);
+                int x2 = int(x[dot-1]);
+                x2=x2+1;
+                x[dot-1]=x2;
                 cout << x.substr(0, dot);
             }
         }
