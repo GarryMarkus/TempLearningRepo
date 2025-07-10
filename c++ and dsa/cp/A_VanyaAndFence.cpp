@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 int main()
 {
     long long n,m,i,j,h;
@@ -9,9 +10,9 @@ int main()
             cin>>a[i];
             if(a[i]>h)
                bnd++;
-            else
+            else {
                 stnd++;
-
+            }
         }
         cout<<2*bnd+stnd<<endl;
     }
