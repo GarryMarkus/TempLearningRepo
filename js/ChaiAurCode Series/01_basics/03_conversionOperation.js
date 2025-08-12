@@ -62,6 +62,8 @@ num1 = num2 = num3 = 2 + 2
 
 let gameCounter = 100
 ++gameCounter;
+gameCounter++;
+//gameCounter++ and ++gameCounter meant the same, these are the prefix and postfix operators
 console.log(gameCounter);
 
 // link to study
