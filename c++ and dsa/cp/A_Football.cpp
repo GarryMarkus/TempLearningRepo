@@ -1,24 +1,30 @@
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    string S;
-    cin >> S;
-
-    int l = S.length();
-    int count = 1; // Start with 1 since we count the current character
-    for (int i = 1; i < l; i++) {
-        if (S[i] == S[i - 1]) { // Check if current char matches previous char
-            count++;
-            if (count >= 7) { // If 7 or more consecutive identical chars
-                cout << "YES";
-                return 0;
+int main(){
+    int t, aa=0, bb=0;
+    string a, b, c;
+    cin >> t;
+    for(int i=0; i<t; i++){
+        cin >> c;
+        if(i==0){
+            a = c;
+            aa++;
+        }
+        else{
+            if(a!=c){
+                b=c;
+                bb++;
             }
-        } else {
-            count = 1; // Reset count if chars differ
+            else{
+                aa++;
+            }
         }
     }
-    cout << "NO";
-    return 0;
+    if(aa>bb){
+        cout << a;
+    }
+    else{
+        cout << b;
+    }
 }
