@@ -1,0 +1,33 @@
+brute force and optimization
+
+#include <bits/stdc++.h>
+using namespace std;
+
+cin and cout
+
+next line character
+
+variables
+concatenation
+
+cin and getline()
+
+string 
+int
+float
+bool
+
+conditional statements
+looping statements
+
+modulus is only applicable on integer values, none of the two should be of any other data type
+
+count():
+    string word = "programming";
+    int mCount = count(word.begin(), word.end(), 'm');
+    cout << mCount;
+
+    output: 2
+
+
+find()
