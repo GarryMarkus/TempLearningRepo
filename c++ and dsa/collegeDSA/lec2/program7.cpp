@@ -23,7 +23,6 @@ int main(){
                 cin >> word;
                 if(word.size()>wMaxLength){
                     wMaxLength = word.size();
-                
                 }
             }
             cout << wMaxLength << endl;
