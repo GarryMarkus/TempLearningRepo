@@ -31,3 +31,8 @@ count():
 
 
 find()
+
+looping statements
+
+
+array and indexing of arrays
