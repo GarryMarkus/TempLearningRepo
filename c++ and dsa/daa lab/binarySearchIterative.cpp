@@ -18,8 +18,9 @@ int main(){
     cout << "Enter the value to search in the array: " << endl;
     cin >> search;
 
-    int low=0, high=n, mid=(low+high)/2;
+    int low=0, high=n; 
     while(low<=high){
+        int mid=(low+high)/2;
         if(arr[mid]==search){
             cout << "Element found at index " << mid << endl;
             return 0;

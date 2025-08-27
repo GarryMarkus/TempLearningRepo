@@ -2,8 +2,8 @@
 using namespace std;
 
 int BSearch(int arr[], int low, int high, int item, int n){
-    int mid=(low+high)/2;
     while(low<=high){
+        int mid=(low+high)/2;
         if(arr[mid]==item){
             return mid;
         }
