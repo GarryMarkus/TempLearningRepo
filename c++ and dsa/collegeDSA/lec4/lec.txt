@@ -1,0 +1,4 @@
+to get the ascii value of "CHARACTER" :-
+int asciiValue = static_cast<int>("CHARACTER")
+OR
+int asciiValue = "CHARACTER";
