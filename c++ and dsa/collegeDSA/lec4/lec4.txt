@@ -1,0 +1,26 @@
+to get the ascii value of "CHARACTER" :-
+int asciiValue = static_cast<int>("CHARACTER")
+OR
+int asciiValue = "CHARACTER";
+
+standard inbuilt array is faster than vector but vector has better functions
+
+vector:
+vector <dataType> vectorName(size, default value);
+
+sorting:
+in increasing:
+sort(marks.begin(), marks.end());
+
+in decreasing
+sort(marks.begin(), marks.end(), greater<int>());
+
+push_back()
+swap
+count
+erase
+insert
+find
+
+sub string of a string
+s.substr(startingIndex, endingIndex)
