@@ -9,7 +9,9 @@ void selectionSort(int arr[], int n) {
                 minIndex = j;
             }
         }
-        swap(arr[i], arr[minIndex]);
+        if(i != minIndex){
+            swap(arr[i], arr[minIndex]);
+        }
     }
 }
 
