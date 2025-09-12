@@ -1,1 +1,14 @@
 object oriented programming
+    class
+    object
+access modifiers
+    private
+    public
+    protected
+
+constructor
+
+
+hw: padding
+greedy alignment
+
