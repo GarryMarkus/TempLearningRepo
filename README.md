@@ -1,5 +1,5 @@
 # codes-documentation
-This repository serves as a centralized storage for all my programming-related resources, including book code files, notes, and PDFs.
+This repository serves as a centralized storage for all my minor programming-related resources, including book code files, notes, and PDFs.
 
 ## Structure
 - **Code**: Stores code files and scripts organized by language or project.
